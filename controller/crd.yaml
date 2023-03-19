@@ -1,0 +1,27 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: todoitems.kopf.dev
+spec:
+  scope: Namespaced
+  group: kopf.dev
+  names:
+    kind: TodoItem
+    plural: todoitems
+    singular: todoitem
+    shortNames:
+      - todo
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              x-kubernetes-preserve-unknown-fields: true
+            status:
+              type: object
+              x-kubernetes-preserve-unknown-fields: true

@@ -1,0 +1,6 @@
+apiVersion: kopf.dev/v1
+kind: TodoItem
+metadata:
+  name: item-1
+  annotations:
+    lane: doing

@@ -1,0 +1,57 @@
+.task {
+    color: white;
+    background: rgba(0, 0, 131, 0.5); 
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    border:2px solid black;
+    border-color: blue;
+    border-radius: 10px;
+}
+.task:hover {
+  background-color: darkblue;
+}
+
+.task:active {
+    scale: 105%;
+}
+
+h1, h2 {
+    color: white;
+    text-align: center;
+}
+
+body {
+  background-color:#00045F ;
+}
+
+.container {
+    background: black; 
+    overflow:auto;
+    min-height: 600px;
+    border-radius: 30px;
+}
+
+.column {
+  background: rgba(0, 0, 131, 0.5);
+  float: left;
+  width: 30%;
+  padding: 10px;
+  margin: 18px;
+  border:2px solid black;
+  border-color: darkgrey;
+  position: relative;
+  border-radius: 20px;
+}
+
+.is-dragging {
+  background: black;
+  scale: 105%;
+}
+
+#todo-form {
+    float: bottom;
+    vertical-align: bottom;
+    position: absolute;
+    bottom: 5px;
+}

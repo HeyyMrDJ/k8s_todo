@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>K8sTodo</title>
+<meta http-equiv="refresh" content="10">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./static/style.css">
+<script src="./static/drag.js" defer></script>
+<script src="./static/newcard.js" defer></script>
+</head>
+<body>
+    <h1> K8sTodo </h1>
+    <div class="container">
+        <div class="row">
+            <div class="column" id="todo">
+                <h2> Todo </h2>
+                <form id="todo-form">
+                    <input type="text" placeholder="New Card" id="todo-input" />
+                    <button type="submit">Add </button>
+                </form>
+            </div>
+          
+            <div class="column" id="doing">
+                <h2> Doing </h2>
+            </div>
+          
+            <div class="column" id="done">
+                <h2> Done </h2>
+            </div>
+        </div>
+
+    </div>
+    <script>
+      function createParagraphs(data, lane) {
+          var todolane = document.getElementById(lane);
+          var newTask = document.createElement("p");
+          newTask.classList.add("task");
+          newTask.setAttribute("draggable", "true");
+          newTask.innerText = data;
+          todolane.appendChild(newTask);
+      }
+
+     {%for item, lane in items.items()%}
+     createParagraphs("{{ item }}", "{{ lane }}");
+     {%endfor%}
+
+    </script>
+</body>
+</html>
