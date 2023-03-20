@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <title>K8sTodo</title>
-<meta http-equiv="refresh" content="10">
+<meta http-equiv="refresh" content="60">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="./static/style.css">
@@ -36,6 +36,7 @@
           var newTask = document.createElement("p");
           newTask.classList.add("task");
           newTask.setAttribute("draggable", "true");
+          newTask.setAttribute("id", data);
           newTask.innerText = data;
           todolane.appendChild(newTask);
       }

@@ -53,3 +53,25 @@ def todo():
         body=my_dict,
     )
     return redirect(url_for('root_path'))
+
+
+@app.route("/update", methods=['POST'])
+def update():
+    data = request.get_json()
+    # print(data['name'], data['lane'])
+    name = data['name']
+    lane = data['lane']
+    resource = render_template(
+            'todo.tmpl',
+            todo_name=name,
+            todo_lane=lane)
+    my_dict = eval(resource)
+    client.CustomObjectsApi().patch_namespaced_custom_object(
+        group="kopf.dev",
+        version="v1",
+        namespace="default",
+        plural="todoitems",
+        name=name,
+        body=my_dict,
+    )
+    return redirect(url_for('root_path'))
