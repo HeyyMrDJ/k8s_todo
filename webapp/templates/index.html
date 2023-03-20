@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="./static/style.css">
 <script src="./static/drag.js" defer></script>
-<script src="./static/newcard.js" defer></script>
 </head>
 <body>
     <h1> K8sTodo </h1>
@@ -15,9 +14,9 @@
         <div class="row">
             <div class="column" id="todo">
                 <h2> Todo </h2>
-                <form id="todo-form">
-                    <input type="text" placeholder="New Card" id="todo-input" />
-                    <button type="submit">Add </button>
+                <form id="todo-form" action="/todo" method="POST">
+                    <input type="text" placeholder="New Card" id="todo-input" name="tinput"/>
+                    <button type="submit" onClick="window.location.reload();">Add </button>
                 </form>
             </div>
           
