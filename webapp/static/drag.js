@@ -16,16 +16,12 @@ droppables.forEach((zone) => {
         e.preventDefault();
         const bottomTask = insertAboveTask(zone, e.clientY);
         const curTask = document.querySelector(".is-dragging");
-        const pElement = document.querySelector('p.task');
-        const idValue = pElement.getAttribute('id');
 
         if (!bottomTask) {
             zone.appendChild(curTask);
-            send_update(idValue, zone.id)
 
         } else {
             zone.insertBefore(curTask, bottomTask);
-            send_update(idValue, zone.id)
 
         }
 
@@ -50,12 +46,3 @@ const insertAboveTask = (zone, mouseY) => {
     return closestTask;
 };
 
-const send_update = (name, lane) => {
-    fetch('/update', {
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    method: 'POST',
-    body: JSON.stringify({ "name": name, "lane": lane })
-    })
-};
