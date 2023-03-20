@@ -46,4 +46,4 @@ flask run
 
 ## GitOps
 Bonus points for using a GitOps tool such as ArgoCD to have a GitOps todo list. 
-![GitOps Todo List](./gitopstodo.png)
+![GitOps Todo List](./mages/gitopstodo.png)
