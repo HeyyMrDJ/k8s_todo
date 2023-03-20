@@ -43,3 +43,7 @@ flask run
 ![kubectl and logs](./images/k8s_todo1.png)
 ![k get todo](./images/k8s_todo2.png)
 ![todo app](./images/k8s_todo3.png)
+
+## GitOps
+Bonus points for using a GitOps tool such as ArgoCD to have a GitOps todo list. 
+![GitOps Todo List](./gitopstodo.png)
